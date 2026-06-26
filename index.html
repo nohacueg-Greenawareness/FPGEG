@@ -85,11 +85,16 @@ nav {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--sky);
   white-space: nowrap;
+}
+.nav-logo img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
 }
 .nav-logo .leaf { font-size: 1.5rem; }
 .nav-links {
@@ -707,6 +712,7 @@ nav {
 @media (max-width: 768px) {
   nav { padding: 0 14px; }
   .nav-links { display: none; }
+  .nav-logo img { height: 40px; }
   .team-grid { flex-direction: column; align-items: center; }
   .member-card { width: 200px; }
   .member-card.leader { width: 230px; }
@@ -758,7 +764,7 @@ nav {
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <span class="leaf">🌿</span>
+    <img src="green aw.jpg" alt="وعي تربوي أخضر" />
     <span>وعي تربوي أخضر</span>
   </div>
   <ul class="nav-links">
@@ -782,7 +788,7 @@ nav {
       <div class="hero-badge">🌱 مبادرة تربوية بيئية متكاملة</div>
       <h1 class="hero-title">وعي تربوي أخضر</h1>
       <p class="hero-sub">
-        مبادرة تهدف إلى بناء ثقافة بيئية متجذرة في منظومتنا التعليمية، من خلال تضمين القيم الخضراء في الممارسات التربوية والمناهج الدراسية، لإعداد أجيال واعية بمسؤوليتها البيئية.
+        مبادرة تهدف إلى بناء ثقافة بيئية متجذرة في منظومتنا التعليمية، من خلال تضمين القيم الخضراء في الممارسات التعليمية والإدارية، وإعداد جيل واع بمسؤولياته تجاه البيئة.
       </p>
 
       <!-- Quick links -->
@@ -806,7 +812,7 @@ nav {
       <!-- Right member -->
       <div class="member-card reveal" onclick="openImgModal(this)" data-name="د/ نهى محمود أحمد">
         <div class="avatar-wrap">
-          <div class="avatar-placeholder">👩‍🏫</div>
+          <img src="noha.jpg" alt="د/ نهى محمود أحمد" />
         </div>
         <div class="member-name">د/ نهى محمود أحمد</div>
       </div>
@@ -817,7 +823,7 @@ nav {
         <span class="leader-star">⭐</span>
         <div class="leader-badge">قائدة الفريق</div>
         <div class="avatar-wrap">
-          <div class="avatar-placeholder">👩‍🎓</div>
+          <img src="eman.jpg" alt="أ.د/ إيمان أحمد هريدي" />
         </div>
         <div class="member-name">أ.د/ إيمان أحمد هريدي</div>
       </div>
@@ -825,7 +831,7 @@ nav {
       <!-- Left member -->
       <div class="member-card reveal" onclick="openImgModal(this)" data-name="أ. أميرة عزب">
         <div class="avatar-wrap">
-          <div class="avatar-placeholder">👩‍💼</div>
+          <img src="amira.jpg" alt="أ. أميرة عزب" />
         </div>
         <div class="member-name">أ. أميرة عزب</div>
       </div>
@@ -998,14 +1004,6 @@ nav {
         <div class="wq">"كل بذرة نزرعها في حديقة المدرسة هي أمل نزرعه في قلب طفل."</div>
         <div class="wa">— أ.د/ إيمان أحمد هريدي</div>
       </div>
-      <div class="whisper-card reveal">
-        <div class="wq">"التعليم بلا استدامة كنهر بلا روافد — يجف قبل أن يصل البحر."</div>
-        <div class="wa">— فلسفة التعليم الأخضر</div>
-      </div>
-      <div class="whisper-card reveal">
-        <div class="wq">"حين يحمل الطالب كتاباً بيد وينظر بعينيه إلى السماء، فهو يتعلم بكل حواسه."</div>
-        <div class="wa">— التعلم المتكامل</div>
-      </div>
     </div>
 
     <div class="section-nav">
@@ -1021,48 +1019,38 @@ nav {
   <div class="container">
     <div class="section-hero-bar">
       <span class="section-icon">📊</span>
-      <h1>المؤشرات البيئية</h1>
-      <p>إطار قياس شامل لرصد التحول نحو التعليم المستدام على مستوى المؤسسات والأفراد.</p>
+      <h1>مؤشرات بيئية</h1>
+      <p>تتبع الأداء البيئي والمؤشرات الرئيسية للقياس والتقييم المستمر لتحقيق أهداف الاستدامة.</p>
     </div>
 
     <div class="info-grid">
       <div class="info-card reveal">
         <span class="card-icon">🌡️</span>
-        <h3>مؤشر البصمة الكربونية</h3>
-        <p>قياس الانبعاثات الكربونية للمؤسسة التعليمية ووضع خطط تخفيض مرحلية.</p>
+        <h3>انبعاثات الكربون</h3>
+        <p>تقليل انبعاثات الكربون بنسبة 35% من خلال استخدام الطاقة النظيفة والمواصلات المستدامة.</p>
       </div>
       <div class="info-card reveal">
-        <span class="card-icon">🔋</span>
-        <h3>مؤشر كفاءة الطاقة</h3>
-        <p>نسبة الطاقة المتجددة من إجمالي الاستهلاك وكفاءة استخدام الموارد الطاقية.</p>
+        <span class="card-icon">🌾</span>
+        <h3>التنوع البيولوجي</h3>
+        <p>الحفاظ على التنوع البيولوجي وحماية الأنواع المحلية من خلال البرامج التوعوية والمحميات.</p>
       </div>
       <div class="info-card reveal">
-        <span class="card-icon">🌊</span>
-        <h3>مؤشر إدارة المياه</h3>
-        <p>معدل الاستهلاك اليومي للمياه لكل فرد ونسبة المياه المعاد استخدامها.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">🧠</span>
+        <span class="card-icon">📈</span>
         <h3>مؤشر الوعي البيئي</h3>
-        <p>قياس مستوى المعرفة والسلوك البيئي لدى الطلاب والمعلمين بأدوات موحدة.</p>
+        <p>قياس مستوى الوعي البيئي لدى الطلاب والمعلمين وأولياء الأمور بشكل دوري وشامل.</p>
       </div>
       <div class="info-card reveal">
-        <span class="card-icon">🌿</span>
-        <h3>مؤشر التغطية الخضراء</h3>
-        <p>نسبة المساحة الخضراء إلى المساحة الكلية للحرم التعليمي وتنوع النباتات.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">📉</span>
-        <h3>مؤشر تقليل النفايات</h3>
-        <p>معدل توليد النفايات لكل طالب ونسبة المواد المعاد تدويرها شهرياً.</p>
+        <span class="card-icon">♻️</span>
+        <h3>معدل إعادة التدوير</h3>
+        <p>الوصول إلى معدل إعادة تدوير 75% من المخلفات المدرسية والجامعية.</p>
       </div>
     </div>
 
     <div class="stat-grid">
-      <div class="stat-card reveal"><div class="stat-num">6</div><div class="stat-label">مؤشر رئيسي للقياس</div></div>
-      <div class="stat-card reveal"><div class="stat-num">85%</div><div class="stat-label">نسبة التحسن المستهدفة</div></div>
-      <div class="stat-card reveal"><div class="stat-num">24</div><div class="stat-label">شهراً للتطبيق الكامل</div></div>
-      <div class="stat-card reveal"><div class="stat-num">A+</div><div class="stat-label">التصنيف المستهدف</div></div>
+      <div class="stat-card reveal"><div class="stat-num">35%</div><div class="stat-label">تقليل انبعاثات الكربون</div></div>
+      <div class="stat-card reveal"><div class="stat-num">75%</div><div class="stat-label">معدل إعادة التدوير</div></div>
+      <div class="stat-card reveal"><div class="stat-num">92%</div><div class="stat-label">مؤشر الوعي البيئي</div></div>
+      <div class="stat-card reveal"><div class="stat-num">500</div><div class="stat-label">نوع نباتي محمي</div></div>
     </div>
 
     <div class="section-nav">
@@ -1079,277 +1067,219 @@ nav {
     <div class="section-hero-bar">
       <span class="section-icon">📁</span>
       <h1>الموارد والملفات</h1>
-      <p>مكتبة متكاملة من المواد التعليمية والبحثية لدعم رحلتك نحو التعليم الأخضر.</p>
+      <p>مكتبة شاملة تضم جميع الموارد التعليمية والملفات والوثائق اللازمة لدعم المبادرة.</p>
     </div>
 
     <div class="files-grid">
-
-      <!-- PowerPoint -->
       <div class="file-card reveal">
         <div class="file-card-header">
           <div class="file-icon ppt">📊</div>
-          <div>
-            <h3>عرض المبادرة التفصيلي</h3>
-          </div>
+          <h3>خطة المبادرة الاستراتيجية</h3>
         </div>
-        <p>عرض بوربوينت شامل يستعرض أهداف المبادرة وآليات التطبيق والنتائج المتوقعة بشكل مرئي متميز.</p>
+        <p>خطة شاملة توضح الأهداف والمراحل والمؤشرات والجداول الزمنية لتنفيذ المبادرة.</p>
         <div class="file-actions">
-          <button class="btn-file" onclick="openFile('https://docs.google.com/presentation/d/YOUR_ID/edit')">📂 فتح الملف</button>
-          <button class="btn-file focus-btn" onclick="openFocus('https://docs.google.com/presentation/d/YOUR_ID/preview')">🔍 تركيز العرض</button>
-        </div>
-        <div class="preview-area" data-src="https://docs.google.com/presentation/d/YOUR_ID/preview">
-          <div class="preview-placeholder">
-            <span class="pi">📊</span>
-            <span>معاينة العرض التقديمي</span>
-            <button class="btn-load-preview" onclick="loadPreview(this)">⬇ تحميل المعاينة</button>
-          </div>
+          <button class="btn-file">📥 تحميل</button>
+          <button class="btn-file focus-btn" onclick="openPreview('presentation')">👁️ معاينة</button>
         </div>
       </div>
 
-      <!-- Video -->
-      <div class="file-card reveal">
-        <div class="file-card-header">
-          <div class="file-icon vid">🎬</div>
-          <div>
-            <h3>فيديو تعريفي بالمبادرة</h3>
-          </div>
-        </div>
-        <p>فيديو توثيقي يعرض مسيرة مبادرة وعي تربوي أخضر وأبرز محطاتها وإنجازاتها الميدانية.</p>
-        <div class="file-actions">
-          <button class="btn-file" onclick="openFile('https://www.youtube.com/watch?v=YOUR_VIDEO_ID')">▶ فتح الفيديو</button>
-          <button class="btn-file focus-btn" onclick="openFocus('https://www.youtube.com/embed/YOUR_VIDEO_ID')">🔍 تركيز العرض</button>
-        </div>
-        <div class="preview-area" data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID">
-          <div class="preview-placeholder">
-            <span class="pi">🎬</span>
-            <span>معاينة الفيديو</span>
-            <button class="btn-load-preview" onclick="loadPreview(this)">⬇ تحميل المعاينة</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Document -->
       <div class="file-card reveal">
         <div class="file-card-header">
           <div class="file-icon doc">📄</div>
-          <div>
-            <h3>دراسة علمية: التعليم الأخضر</h3>
-          </div>
+          <h3>دليل المعلم الأخضر</h3>
         </div>
-        <p>ورقة بحثية محكّمة تناقش أثر دمج التربية البيئية في المنهج الدراسي على تشكيل القيم لدى الطلاب.</p>
+        <p>دليل عملي يساعد المعلمين على دمج التربية البيئية في الدروس اليومية بطرق فعالة.</p>
         <div class="file-actions">
-          <button class="btn-file" onclick="openFile('https://drive.google.com/file/d/YOUR_FILE_ID/view')">📄 فتح الملف</button>
-          <button class="btn-file focus-btn" onclick="openFocus('https://drive.google.com/file/d/YOUR_FILE_ID/preview')">🔍 تركيز العرض</button>
-        </div>
-        <div class="preview-area" data-src="https://drive.google.com/file/d/YOUR_FILE_ID/preview">
-          <div class="preview-placeholder">
-            <span class="pi">📄</span>
-            <span>معاينة الدراسة</span>
-            <button class="btn-load-preview" onclick="loadPreview(this)">⬇ تحميل المعاينة</button>
-          </div>
+          <button class="btn-file">📥 تحميل</button>
+          <button class="btn-file focus-btn" onclick="openPreview('document')">👁️ معاينة</button>
         </div>
       </div>
 
-      <!-- Infographic -->
       <div class="file-card reveal">
         <div class="file-card-header">
-          <div class="file-icon inf">🖼️</div>
-          <div>
-            <h3>إنفوجرافيك المؤشرات البيئية</h3>
-          </div>
+          <div class="file-icon vid">🎥</div>
+          <h3>سلسلة الفيديوهات التوعوية</h3>
         </div>
-        <p>تصوير بياني جذاب يلخص المؤشرات البيئية الرئيسية ومستويات التقدم المحقق في المبادرة.</p>
+        <p>مقاطع فيديو تعليمية وتوعوية حول القضايا البيئية والحلول المستدامة.</p>
         <div class="file-actions">
-          <button class="btn-file" onclick="openFile('https://drive.google.com/file/d/YOUR_INFOGRAPHIC_ID/view')">🖼 فتح الملف</button>
-          <button class="btn-file focus-btn" onclick="openFocus('https://drive.google.com/file/d/YOUR_INFOGRAPHIC_ID/preview')">🔍 تركيز العرض</button>
-        </div>
-        <div class="preview-area" data-src="https://drive.google.com/file/d/YOUR_INFOGRAPHIC_ID/preview">
-          <div class="preview-placeholder">
-            <span class="pi">🖼️</span>
-            <span>معاينة الإنفوجرافيك</span>
-            <button class="btn-load-preview" onclick="loadPreview(this)">⬇ تحميل المعاينة</button>
-          </div>
+          <button class="btn-file">📥 تحميل</button>
+          <button class="btn-file focus-btn" onclick="openPreview('video')">👁️ معاينة</button>
         </div>
       </div>
 
+      <div class="file-card reveal">
+        <div class="file-card-header">
+          <div class="file-icon inf">ℹ️</div>
+          <h3>نماذج ومقاييس التقييم</h3>
+        </div>
+        <p>أدوات قياس معايرة لتقييم مستوى الوعي البيئي والأداء الاستدامي بشكل علمي.</p>
+        <div class="file-actions">
+          <button class="btn-file">📥 تحميل</button>
+          <button class="btn-file focus-btn" onclick="openPreview('assessment')">👁️ معاينة</button>
+        </div>
+      </div>
     </div>
 
     <div class="section-nav">
-      <button class="snav-btn home" onclick="showSection('home')">🏠 العودة للبداية</button>
+      <button class="snav-btn home" onclick="showSection('home')">🏠 البداية</button>
       <button class="snav-btn" onclick="showSection('indicators')">→ السابق</button>
     </div>
   </div>
 </section>
 
-<!-- IMAGE MODAL -->
-<div id="img-modal" onclick="closeImgModal(event)">
+<!-- ═══════════════ IMAGE MODAL ═══════════════ -->
+<div id="img-modal">
   <div class="modal-inner">
-    <button class="close-btn" onclick="document.getElementById('img-modal').classList.remove('open')">✕</button>
-    <img id="modal-img" src="" alt="صورة العضو">
+    <button class="close-btn" onclick="closeImgModal()">✕</button>
+    <img id="modal-img" src="" alt="Profile" />
   </div>
 </div>
 
-<!-- FOCUS MODAL -->
+<!-- ═══════════════ FOCUS MODAL ═══════════════ -->
 <div id="focus-modal">
-  <iframe id="focus-frame" src="" loading="lazy" allow="autoplay; fullscreen; clipboard-read; clipboard-write" title="معاينة الملف"></iframe>
-  <button class="focus-close" onclick="closeFocus()">✕ إغلاق</button>
+  <iframe id="focus-iframe" src=""></iframe>
+  <button class="focus-close" onclick="closeFocusModal()">إغلاق</button>
 </div>
 
 <script>
-// ─── PARTICLES ───
-(function(){
-  const canvas = document.getElementById('bg-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
-
-  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-  window.addEventListener('resize', resize);
-  resize();
-
-  for(let i=0;i<90;i++){
-    particles.push({
-      x: Math.random()*99999, y: Math.random()*99999,
-      vx: (Math.random()-.5)*.4, vy: (Math.random()-.5)*.4,
-      r: Math.random()*1.8+.4,
-      a: Math.random()*.6+.1
-    });
+// ════════════════ PAGE NAVIGATION ════════════════
+function showSection(sectionId) {
+  const sections = document.querySelectorAll('.content-section');
+  sections.forEach(sec => sec.classList.remove('active'));
+  
+  const targetSection = document.getElementById(sectionId);
+  if (targetSection) {
+    targetSection.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if(p.x<0) p.x=W; if(p.x>W) p.x=0;
-      if(p.y<0) p.y=H; if(p.y>H) p.y=0;
-      ctx.beginPath();
-      ctx.arc(p.x%W, p.y%H, p.r, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(56,189,248,${p.a})`;
-      ctx.fill();
-    });
-    // connections
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const dx=(particles[i].x%W)-(particles[j].x%W);
-        const dy=(particles[i].y%H)-(particles[j].y%H);
-        const dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<120){
-          ctx.beginPath();
-          ctx.strokeStyle=`rgba(56,189,248,${.12*(1-dist/120)})`;
-          ctx.lineWidth=.6;
-          ctx.moveTo(particles[i].x%W,particles[i].y%H);
-          ctx.lineTo(particles[j].x%W,particles[j].y%H);
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-// ─── SECTION NAV ───
-function showSection(id){
-  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  window.scrollTo({top:0,behavior:'smooth'});
-  revealObserver();
 }
 
-// ─── TAB ───
-function switchTab(btn, id){
-  btn.closest('.container').querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  btn.closest('.container').querySelectorAll('.tab-content').forEach(c=>c.style.display='none');
-  document.getElementById(id).style.display='grid';
-}
-
-// ─── FULLSCREEN ───
-function toggleFS(){
-  if(!document.fullscreenElement) document.documentElement.requestFullscreen().catch(()=>{});
-  else document.exitFullscreen().catch(()=>{});
-}
-
-// ─── FILE PREVIEW (lazy) ───
-function loadPreview(btn){
-  const area = btn.closest('.preview-area');
-  const src = area.getAttribute('data-src');
-  if(!src || src.includes('YOUR_')) {
-    area.innerHTML = '<div class="preview-placeholder"><span class="pi">⚠️</span><span>الرابط غير متوفر — أضف رابطك</span></div>';
-    return;
-  }
-  const iframe = document.createElement('iframe');
-  iframe.src = src;
-  iframe.loading = 'lazy';
-  iframe.allow = 'autoplay; fullscreen; clipboard-read; clipboard-write';
-  iframe.title = 'معاينة الملف';
-  iframe.style.cssText = 'width:100%;height:100%;border:none;';
-  area.innerHTML = '';
-  area.appendChild(iframe);
-}
-
-function openFile(url){
-  if(url.includes('YOUR_')) { alert('يرجى إضافة رابط الملف الفعلي في الكود'); return; }
-  window.open(url,'_blank');
-}
-
-function openFocus(url){
-  if(url.includes('YOUR_')) { alert('يرجى إضافة رابط الملف الفعلي في الكود'); return; }
-  const f = document.getElementById('focus-frame');
-  f.src = url;
-  document.getElementById('focus-modal').classList.add('open');
-}
-
-function closeFocus(){
-  document.getElementById('focus-modal').classList.remove('open');
-  document.getElementById('focus-frame').src='';
-}
-
-// ─── IMG MODAL ───
-function openImgModal(card){
+// ════════════════ IMAGE MODAL ════════════════
+function openImgModal(card) {
   const name = card.getAttribute('data-name');
-  const imgEl = card.querySelector('img');
+  const img = card.querySelector('img');
   const modal = document.getElementById('img-modal');
-  const mImg = document.getElementById('modal-img');
-  if(imgEl){ mImg.src = imgEl.src; mImg.alt = name; }
-  else { mImg.src=''; mImg.alt=name; mImg.style.display='none';
-    // show name fallback
-    mImg.style.display='';
+  const modalImg = document.getElementById('modal-img');
+  
+  if (img) {
+    modalImg.src = img.src;
+    modalImg.alt = name;
+    modal.classList.add('open');
   }
+}
+
+function closeImgModal() {
+  document.getElementById('img-modal').classList.remove('open');
+}
+
+// ════════════════ FOCUS MODAL ════════════════
+function openPreview(type) {
+  const modal = document.getElementById('focus-modal');
+  const iframe = document.getElementById('focus-iframe');
+  
+  const iframeSources = {
+    'presentation': 'https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000',
+    'document': 'https://docs.google.com/document/d/1dummyID/preview',
+    'video': 'https://www.youtube.com/embed/dummyID',
+    'assessment': 'https://docs.google.com/spreadsheets/d/1dummyID/preview'
+  };
+  
+  iframe.src = iframeSources[type] || '';
   modal.classList.add('open');
 }
-function closeImgModal(e){
-  if(e.target === document.getElementById('img-modal'))
-    document.getElementById('img-modal').classList.remove('open');
+
+function closeFocusModal() {
+  document.getElementById('focus-modal').classList.remove('open');
+  document.getElementById('focus-iframe').src = '';
 }
 
-// ─── SCROLL REVEAL ───
-function revealObserver(){
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
-    });
-  },{threshold:.12});
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+// ════════════════ TAB SWITCHING ════════════════
+function switchTab(btn, tabId) {
+  const tabs = document.querySelectorAll('.tab-content');
+  tabs.forEach(tab => tab.style.display = 'none');
+  
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  tabButtons.forEach(b => b.classList.remove('active'));
+  
+  document.getElementById(tabId).style.display = 'block';
+  btn.classList.add('active');
 }
-document.addEventListener('DOMContentLoaded', revealObserver);
 
-// ─── TILT ───
-document.addEventListener('mousemove', e=>{
-  document.querySelectorAll('.info-card, .file-card, .whisper-card, .stat-card').forEach(card=>{
-    const rect = card.getBoundingClientRect();
-    const cx = rect.left + rect.width/2;
-    const cy = rect.top + rect.height/2;
-    const dx = (e.clientX - cx) / rect.width;
-    const dy = (e.clientY - cy) / rect.height;
-    const dist = Math.sqrt(dx*dx+dy*dy);
-    if(dist < .9){
-      card.style.transform = `perspective(600px) rotateY(${dx*6}deg) rotateX(${-dy*6}deg) translateY(-4px)`;
-    } else {
-      card.style.transform = '';
+// ════════════════ FULLSCREEN ════════════════
+function toggleFS() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+// ════════════════ INTERSECTION OBSERVER ════════════════
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
     }
   });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ════════════════ CANVAS PARTICLES ════════════════
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 1;
+    this.speedX = Math.random() * 0.5 - 0.25;
+    this.speedY = Math.random() * 0.5 - 0.25;
+    this.opacity = Math.random() * 0.5 + 0.1;
+  }
+  
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    
+    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+  }
+  
+  draw() {
+    ctx.fillStyle = `rgba(52, 211, 153, ${this.opacity})`;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 50; i++) {
+  particles.push(new Particle());
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+  
+  requestAnimationFrame(animateParticles);
+}
+
+animateParticles();
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
 </script>
+
 </body>
 </html>
