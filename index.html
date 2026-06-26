@@ -505,6 +505,7 @@ nav {
   border-radius: var(--radius);
   padding: 22px 20px;
   transition: transform .2s;
+  cursor: pointer;
 }
 .whisper-card:hover { transform: translateX(-4px); }
 .whisper-card .wq {
@@ -518,6 +519,23 @@ nav {
   font-size: 0.78rem;
   color: var(--green);
   font-weight: 700;
+}
+.whisper-card.video-card {
+  position: relative;
+  overflow: hidden;
+}
+.whisper-card.video-card::before {
+  content: '▶️';
+  position: absolute;
+  font-size: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.whisper-card.video-card:hover::before {
+  opacity: 1;
 }
 
 /* ─── FILE CARDS ─── */
@@ -988,6 +1006,10 @@ nav {
     </div>
 
     <div class="whisper-list">
+      <div class="whisper-card video-card reveal" onclick="openPreview('whisper1')" style="background: linear-gradient(135deg, rgba(52,211,153,0.2), rgba(56,189,248,0.1));">
+        <div class="wq">🌱 قصة شتلة — رحلة نمو الشتلة من البذرة إلى الشجرة الجميلة</div>
+        <div class="wa">فيديو تربوي ملهم — جميع الفئات العمرية</div>
+      </div>
       <div class="whisper-card reveal">
         <div class="wq">"لا تورّث أطفالك المال فقط، بل أورّثهم كوكباً يستحق العيش فيه."</div>
         <div class="wa">— همسة بيئية تربوية</div>
@@ -1181,7 +1203,8 @@ function openPreview(type) {
     'presentation': 'https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000',
     'document': 'https://docs.google.com/document/d/1dummyID/preview',
     'video': 'https://www.youtube.com/embed/dummyID',
-    'assessment': 'https://docs.google.com/spreadsheets/d/1dummyID/preview'
+    'assessment': 'https://docs.google.com/spreadsheets/d/1dummyID/preview',
+    'whisper1': 'https://www.youtube.com/embed/fow78XmHVxo'
   };
   
   iframe.src = iframeSources[type] || '';
