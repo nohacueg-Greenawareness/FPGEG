@@ -10,9 +10,13 @@
 
 عرض تقديمي شامل عن أهداف المبادرة والخطط المستقبلية.
 
-**[⬇️ تحميل](https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/edit?usp=drive_link&ouid=100786432696852703977&rtpof=true&sd=true)** | **[📊 معاينة](https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/edit?usp=drive_link&ouid=100786432696852703977&rtpof=true&sd=true)**
+### 📊 [اضغط هنا لعرض العرض التقديمي الكامل](https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/edit?usp=drive_link&ouid=100786432696852703977&rtpof=true&sd=true)
 
-<iframe src="https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="600" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+[![عرض المبادرة](https://lh3.googleusercontent.com/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO=w300)](https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/edit?usp=drive_link&ouid=100786432696852703977&rtpof=true&sd=true)
+
+**خيارات الوصول:**
+- **[⬇️ تحميل الملف](https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/export?format=pptx)**
+- **[📊 عرض مباشر](https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/edit?usp=drive_link&ouid=100786432696852703977&rtpof=true&sd=true)**
 
 ---
 
