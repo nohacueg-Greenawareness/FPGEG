@@ -11,5 +11,6 @@ images/greenaw logo.png
 
 يمكن مشاهدة العرض التقديمي من خلال الرابط التالي:
 
-[عرض المبادرة]([https:/](https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/edit?usp=drive_link&ouid=100786432696852703977&rtpof=true&sd=true)/ضع_الرابط_هنا)
+[عرض المبادرة]
+([https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/edit?usp=drive_link&ouid=100786432696852703977&rtpof=true&sd=true](https://shorturl.at/miFzl))/ضع_الرابط_هنا)
 
