@@ -48,1261 +48,336 @@ body {
 .aurora {
   position: fixed;
   inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-.aurora-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.13;
-  animation: drift 18s ease-in-out infinite alternate;
-}
-.aurora-blob:nth-child(1) { width: 700px; height: 700px; background: radial-gradient(circle, #38bdf8, transparent 70%); top: -200px; right: -100px; animation-duration: 20s; }
-.aurora-blob:nth-child(2) { width: 500px; height: 500px; background: radial-gradient(circle, #34d399, transparent 70%); bottom: -150px; left: -80px; animation-duration: 24s; animation-delay: -5s; }
-.aurora-blob:nth-child(3) { width: 400px; height: 400px; background: radial-gradient(circle, #f0c040, transparent 70%); top: 40%; left: 30%; animation-duration: 28s; animation-delay: -10s; }
-
-@keyframes drift {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(60px, 40px) scale(1.15); }
-}
-
-/* ─── NAV ─── */
-nav {
-  position: fixed;
-  top: 0; right: 0; left: 0;
-  z-index: 100;
-  background: rgba(8, 15, 26, 0.82);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(56,189,248,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 28px;
-  height: 62px;
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--sky);
-  white-space: nowrap;
-}
-.nav-logo img {
-  height: 45px;
-  width: auto;
-  object-fit: contain;
-}
-.nav-logo .leaf { font-size: 1.5rem; }
-.nav-links {
-  display: flex;
-  gap: 4px;
-  list-style: none;
-}
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.88rem;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: all .2s;
-}
-.nav-links a:hover, .nav-links a.active {
-  color: var(--sky);
-  background: var(--sky-dim);
-}
-.nav-actions { display: flex; gap: 8px; }
-.btn-fs {
-  background: var(--sky-dim);
-  border: 1px solid rgba(56,189,248,0.25);
-  color: var(--sky);
-  border-radius: 8px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-family: inherit;
-  transition: all .2s;
-}
-.btn-fs:hover { background: rgba(56,189,248,0.28); }
-
-/* ─── SECTIONS ─── */
-.page-section {
-  min-height: 100vh;
-  padding: 82px 0 60px;
-  position: relative;
   z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 20% 50%, rgba(52, 211, 153, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+/* ─── LOGO ─── */
+.logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  background: rgba(13, 27, 46, 0.8);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 12px;
+  padding: 8px;
+  backdrop-filter: blur(8px);
+}
 
-/* ─── HERO ─── */
-#hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* ─── HEADER ─── */
+header {
   position: relative;
-  overflow: hidden;
+  z-index: 10;
+  padding: 40px 20px 60px;
+  text-align: center;
 }
-.hero-inner { max-width: 760px; }
-.hero-badge {
-  display: inline-block;
-  background: var(--green-dim);
-  border: 1px solid rgba(52,211,153,0.3);
-  color: var(--green);
-  font-size: 0.82rem;
-  padding: 5px 16px;
-  border-radius: 100px;
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--sky) 0%, var(--green) 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
+  text-shadow: 0 0 40px rgba(52, 211, 153, 0.2);
+  letter-spacing: -1px;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  margin: 20px auto 0;
+  width: 200px;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  color: var(--muted);
+  margin-top: 25px;
+  font-weight: 300;
   letter-spacing: 0.5px;
 }
-.hero-title {
-  font-size: clamp(2.2rem, 6vw, 3.8rem);
-  font-weight: 900;
-  line-height: 1.2;
-  margin-bottom: 18px;
-  background: linear-gradient(135deg, #f0f6ff 0%, #38bdf8 50%, #34d399 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-sub {
-  font-size: 1.05rem;
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 36px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-/* quick-access */
-.quick-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 56px;
-}
-.ql-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(56,189,248,0.25);
-  background: var(--card-bg);
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  transition: all .25s;
-  white-space: nowrap;
-}
-.ql-btn .icon { font-size: 1.15rem; }
-.ql-btn:hover { transform: translateY(-3px); border-color: var(--sky); color: var(--sky); box-shadow: 0 8px 24px rgba(56,189,248,0.2); }
-
-/* ─── TEAM ─── */
-.section-heading {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.section-heading h2 {
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 10px;
-}
-.section-heading .line {
-  width: 64px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--sky), var(--green));
-  border-radius: 2px;
+/* ─── CONTAINER ─── */
+.container {
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-.team-grid {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 32px;
-  position: relative;
+/* ─── SECTION ─── */
+section {
+  margin: 80px 0;
 }
 
-/* member card */
-.member-card {
-  background: var(--card-bg);
-  border: 1px solid rgba(56,189,248,0.18);
-  border-radius: 20px;
-  padding: 28px 20px 22px;
-  width: 210px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform .3s, box-shadow .3s;
-  position: relative;
-  overflow: hidden;
-}
-.member-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(56,189,248,0.05) 0%, transparent 60%);
-  pointer-events: none;
-}
-.member-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 16px 48px rgba(56,189,248,0.22);
-}
-.member-card .avatar-wrap {
-  width: 110px; height: 110px;
-  border-radius: 50%;
-  margin: 0 auto 16px;
-  overflow: hidden;
-  border: 3px solid rgba(56,189,248,0.35);
-  position: relative;
-}
-.member-card .avatar-wrap img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.avatar-placeholder {
-  width: 100%; height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
-  background: linear-gradient(135deg, #0d2d4a, #0a1e30);
-  color: var(--sky);
-}
-.member-name {
-  font-size: 0.92rem;
+section h2 {
+  font-size: 2.5rem;
   font-weight: 700;
-  color: var(--white);
-  background: rgba(56,189,248,0.1);
-  border: 1px solid rgba(56,189,248,0.2);
-  border-radius: 8px;
-  padding: 7px 10px;
-  line-height: 1.4;
-}
-
-/* LEADER card */
-.member-card.leader {
-  width: 250px;
-  border: 2px solid var(--gold);
-  box-shadow: 0 0 30px var(--gold-dim), 0 8px 32px rgba(0,0,0,0.5);
-  animation: leaderPulse 3s ease-in-out infinite;
-}
-@keyframes leaderPulse {
-  0%, 100% { box-shadow: 0 0 30px var(--gold-dim), 0 8px 32px rgba(0,0,0,0.5); }
-  50% { box-shadow: 0 0 55px rgba(240,192,64,0.45), 0 8px 32px rgba(0,0,0,0.5); }
-}
-.member-card.leader:hover {
-  transform: translateY(-10px) scale(1.04);
-  box-shadow: 0 0 70px rgba(240,192,64,0.5), 0 20px 56px rgba(0,0,0,0.6);
-  animation: none;
-}
-.member-card.leader .avatar-wrap {
-  width: 130px; height: 130px;
-  border: 3px solid var(--gold);
-  box-shadow: 0 0 20px var(--gold-dim);
-}
-.member-card.leader .member-name {
-  background: var(--gold-dim);
-  border-color: rgba(240,192,64,0.4);
-  color: var(--gold);
-  font-size: 0.95rem;
-}
-.leader-star {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  font-size: 1.3rem;
-  animation: spinStar 4s linear infinite;
-}
-@keyframes spinStar {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.3); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-.leader-badge {
-  display: inline-block;
-  background: var(--gold-dim);
-  border: 1px solid rgba(240,192,64,0.4);
-  color: var(--gold);
-  font-size: 0.72rem;
-  padding: 3px 10px;
-  border-radius: 100px;
-  margin-bottom: 10px;
-}
-.shine-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, transparent 40%, rgba(240,192,64,0.08) 50%, transparent 60%);
-  background-size: 200% 200%;
-  animation: shineMove 3s linear infinite;
-  pointer-events: none;
-  border-radius: inherit;
-}
-@keyframes shineMove {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* ─── NAV SECTION BUTTONS ─── */
-.section-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-top: 56px;
-  flex-wrap: wrap;
-}
-.snav-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
-  border-radius: 12px;
-  border: 1px solid rgba(56,189,248,0.25);
-  background: var(--card-bg);
-  color: var(--sky);
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .2s;
-}
-.snav-btn:hover { background: var(--sky-dim); box-shadow: 0 4px 20px rgba(56,189,248,0.2); }
-.snav-btn.home { color: var(--green); border-color: rgba(52,211,153,0.25); }
-.snav-btn.home:hover { background: var(--green-dim); }
-
-/* ─── CONTENT SECTIONS ─── */
-.content-section {
-  display: none;
-  animation: fadeIn .4s ease;
-}
-.content-section.active { display: block; }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* section hero bar */
-.section-hero-bar {
-  background: linear-gradient(135deg, var(--navy), #0a2035);
-  border: 1px solid rgba(56,189,248,0.15);
-  border-radius: var(--radius);
-  padding: 36px 40px;
   margin-bottom: 40px;
-  position: relative;
-  overflow: hidden;
-}
-.section-hero-bar::after {
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  width: 300px; height: 100%;
-  background: radial-gradient(ellipse at right center, rgba(56,189,248,0.07) 0%, transparent 70%);
-  pointer-events: none;
-}
-.section-hero-bar h1 {
-  font-size: clamp(1.4rem, 3.5vw, 2rem);
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-.section-hero-bar p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  max-width: 600px;
-}
-.section-icon {
-  position: absolute;
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 4rem;
-  opacity: 0.12;
-}
-
-/* ─── INFO CARDS GRID ─── */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 32px;
-}
-.info-card {
-  background: var(--card-bg);
-  border: 1px solid rgba(56,189,248,0.14);
-  border-radius: var(--radius);
-  padding: 24px;
-  transition: transform .25s, box-shadow .25s;
-}
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 36px rgba(56,189,248,0.15);
-}
-.info-card .card-icon {
-  font-size: 2.2rem;
-  margin-bottom: 14px;
-  display: block;
-}
-.info-card h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--sky);
-  margin-bottom: 8px;
-}
-.info-card p {
-  font-size: 0.875rem;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-/* stat cards */
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 18px;
-  margin-bottom: 32px;
-}
-.stat-card {
-  background: var(--card-bg);
-  border: 1px solid rgba(52,211,153,0.18);
-  border-radius: var(--radius);
-  padding: 22px 16px;
+  background: linear-gradient(135deg, var(--sky), var(--green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
 }
-.stat-card .stat-num {
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--green);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.stat-card .stat-label {
-  font-size: 0.8rem;
-  color: var(--muted);
+
+/* ─── GRID ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-/* whisper cards */
-.whisper-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-.whisper-card {
+/* ─── CARD ─── */
+.card {
   background: var(--card-bg);
-  border-right: 4px solid var(--green);
+  border: 1px solid rgba(52, 211, 153, 0.2);
   border-radius: var(--radius);
-  padding: 22px 20px;
-  transition: transform .2s;
-  cursor: pointer;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
 }
-.whisper-card:hover { transform: translateX(-4px); }
-.whisper-card .wq {
-  font-size: 0.95rem;
-  font-style: italic;
-  color: var(--white);
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 12px 48px rgba(56, 189, 248, 0.15);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--sky);
+}
+
+.card p {
   line-height: 1.8;
-  margin-bottom: 10px;
-}
-.whisper-card .wa {
-  font-size: 0.78rem;
-  color: var(--green);
-  font-weight: 700;
-}
-.whisper-card.video-card {
-  position: relative;
-  overflow: hidden;
-}
-.whisper-card.video-card::before {
-  content: '▶️';
-  position: absolute;
-  font-size: 3rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity .3s;
-}
-.whisper-card.video-card:hover::before {
-  opacity: 1;
+  color: var(--muted);
 }
 
-/* ─── FILE CARDS ─── */
-.files-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-.file-card {
-  background: var(--card-bg);
-  border: 1px solid rgba(56,189,248,0.16);
-  border-radius: var(--radius);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: transform .25s, box-shadow .25s;
-}
-.file-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(56,189,248,0.15); }
-.file-card-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.file-icon {
-  width: 50px; height: 50px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-.file-icon.ppt { background: linear-gradient(135deg, #c0392b, #8e1616); }
-.file-icon.vid { background: linear-gradient(135deg, #6c3483, #1a0533); }
-.file-icon.doc { background: linear-gradient(135deg, #1a6fa0, #0a2d42); }
-.file-icon.inf { background: linear-gradient(135deg, #0e7c57, #053422); }
-.file-card h3 {
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.4;
-}
-.file-card p {
-  font-size: 0.82rem;
-  color: var(--muted);
-  line-height: 1.6;
-  flex: 1;
-}
-.file-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.btn-file {
-  flex: 1;
-  min-width: 100px;
-  padding: 9px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(56,189,248,0.25);
-  background: var(--sky-dim);
-  color: var(--sky);
-  font-family: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .2s;
-  text-align: center;
-}
-.btn-file:hover { background: rgba(56,189,248,0.28); }
-.btn-file.focus-btn {
-  border-color: rgba(52,211,153,0.25);
-  background: var(--green-dim);
-  color: var(--green);
-}
-.btn-file.focus-btn:hover { background: rgba(52,211,153,0.25); }
-
-/* preview area */
-.preview-area {
-  background: #060c16;
-  border: 1px solid rgba(56,189,248,0.12);
-  border-radius: 12px;
-  overflow: hidden;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.preview-area iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-.preview-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: var(--muted);
-  font-size: 0.85rem;
-  text-align: center;
-}
-.preview-placeholder .pi { font-size: 2rem; }
-.btn-load-preview {
-  padding: 8px 18px;
+/* ─── BUTTON ─── */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--green), var(--sky));
+  color: var(--deep);
+  text-decoration: none;
   border-radius: 8px;
-  border: 1px solid rgba(56,189,248,0.3);
-  background: var(--sky-dim);
-  color: var(--sky);
-  font-family: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all .2s;
-}
-.btn-load-preview:hover { background: rgba(56,189,248,0.25); }
-
-/* focus modal */
-#focus-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(4,9,18,0.95);
-  z-index: 300;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 16px;
-}
-#focus-modal.open { display: flex; }
-#focus-modal iframe {
-  width: 90vw;
-  height: 78vh;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 15px;
   border: none;
-  border-radius: 12px;
-}
-.focus-close {
-  padding: 10px 28px;
-  border-radius: 10px;
-  border: 1px solid rgba(56,189,248,0.3);
-  background: var(--sky-dim);
-  color: var(--sky);
-  font-family: inherit;
-  font-size: 0.9rem;
   cursor: pointer;
 }
 
-/* ─── IMAGE MODAL ─── */
-#img-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(4,9,18,0.93);
-  z-index: 200;
-  align-items: center;
-  justify-content: center;
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.4);
 }
-#img-modal.open { display: flex; }
-#img-modal .modal-inner {
+
+/* ─── FOOTER ─── */
+footer {
   position: relative;
-  max-width: 90vw;
-  max-height: 85vh;
-}
-#img-modal img {
-  max-width: 85vw;
-  max-height: 80vh;
-  border-radius: 16px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.8);
-}
-#img-modal .close-btn {
-  position: absolute;
-  top: -14px;
-  left: -14px;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: var(--sky-dim);
-  border: 1px solid var(--sky);
-  color: var(--sky);
-  font-size: 1.1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 5;
+  background: rgba(8, 15, 26, 0.8);
+  border-top: 1px solid rgba(52, 211, 153, 0.15);
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 100px;
+  backdrop-filter: blur(10px);
 }
 
-/* ─── SCROLL REVEAL ─── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+footer p {
+  color: var(--muted);
+  margin: 10px 0;
+}
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-  nav { padding: 0 14px; }
-  .nav-links { display: none; }
-  .nav-logo img { height: 40px; }
-  .team-grid { flex-direction: column; align-items: center; }
-  .member-card { width: 200px; }
-  .member-card.leader { width: 230px; }
-  .section-hero-bar { padding: 24px 20px; }
-  .section-icon { display: none; }
-  .container { padding: 0 14px; }
+  h1 { font-size: 2.2rem; }
+  section h2 { font-size: 1.8rem; }
+  header { padding: 30px 15px 50px; }
+  .grid { grid-template-columns: 1fr; }
+  .logo { top: 10px; right: 10px; }
+  .logo img { height: 50px; }
 }
 
-/* ─── SCROLLBAR ─── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--deep); }
-::-webkit-scrollbar-thumb { background: rgba(56,189,248,0.3); border-radius: 3px; }
-
-/* tab nav */
-.tab-nav {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-}
-.tab-btn {
-  padding: 8px 18px;
-  border-radius: 10px;
-  border: 1px solid rgba(56,189,248,0.2);
-  background: transparent;
-  color: var(--muted);
-  font-family: inherit;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all .2s;
-}
-.tab-btn.active, .tab-btn:hover {
-  background: var(--sky-dim);
-  color: var(--sky);
-  border-color: rgba(56,189,248,0.4);
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  section h2 { font-size: 1.5rem; }
+  .card { padding: 20px; }
 }
 </style>
 </head>
+
 <body>
-
-<!-- Background -->
 <canvas id="bg-canvas"></canvas>
-<div class="aurora">
-  <div class="aurora-blob"></div>
-  <div class="aurora-blob"></div>
-  <div class="aurora-blob"></div>
+<div class="aurora"></div>
+
+<!-- LOGO -->
+<div class="logo">
+  <img src="images/green-aw.jpg" alt="وعي تربوي أخضر">
 </div>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <img src="green aw.jpg" alt="وعي تربوي أخضر" />
-    <span>وعي تربوي أخضر</span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#" class="active" onclick="showSection('home')">الرئيسية</a></li>
-    <li><a href="#" onclick="showSection('green-uni')">الجامعة الخضراء</a></li>
-    <li><a href="#" onclick="showSection('green-schools')">المدارس الخضراء</a></li>
-    <li><a href="#" onclick="showSection('whispers')">همسات تربوية</a></li>
-    <li><a href="#" onclick="showSection('indicators')">مؤشرات بيئية</a></li>
-    <li><a href="#" onclick="showSection('resources')">الموارد</a></li>
-  </ul>
-  <div class="nav-actions">
-    <button class="btn-fs" onclick="toggleFS()">⛶ ملء الشاشة</button>
-  </div>
-</nav>
+<!-- HEADER -->
+<header>
+  <h1>وعي تربوي أخضر</h1>
+  <p class="tagline">تربية بيئية مستدامة للأجيال القادمة</p>
+</header>
 
-<!-- ═══════════════ HOME SECTION ═══════════════ -->
-<section id="home" class="page-section content-section active">
-  <div class="container">
-    <!-- HERO -->
-    <div class="hero-inner" style="margin: 0 auto; text-align: center; padding: 20px 0 40px;">
-      <div class="hero-badge">🌱 مبادرة تربوية بيئية متكاملة</div>
-      <h1 class="hero-title">وعي تربوي أخضر</h1>
-      <p class="hero-sub">
-        مبادرة تهدف إلى بناء ثقافة بيئية متجذرة في منظومتنا التعليمية، من خلال تضمين القيم الخضراء في الممارسات التعليمية والإدارية، وإعداد جيل واع بمسؤولياته تجاه البيئة.
-      </p>
-
-      <!-- Quick links -->
-      <div class="quick-links">
-        <button class="ql-btn" onclick="showSection('home')"><span class="icon">🏠</span> الصفحة الرئيسية</button>
-        <button class="ql-btn" onclick="showSection('green-uni')"><span class="icon">🏛️</span> الجامعة الخضراء</button>
-        <button class="ql-btn" onclick="showSection('green-schools')"><span class="icon">🏫</span> المدارس الخضراء</button>
-        <button class="ql-btn" onclick="showSection('whispers')"><span class="icon">💬</span> همسات تربوية</button>
-        <button class="ql-btn" onclick="showSection('indicators')"><span class="icon">📊</span> مؤشرات بيئية</button>
-        <button class="ql-btn" onclick="showSection('resources')"><span class="icon">📁</span> الموارد والملفات</button>
+<!-- MAIN CONTENT -->
+<div class="container">
+  <!-- ABOUT SECTION -->
+  <section>
+    <h2>عن المشروع</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🌿 الهدف</h3>
+        <p>نشر الوعي البيئي والتربية الخضراء بين الطلاب والمجتمع لبناء مستقبل مستدام.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 الرؤية</h3>
+        <p>مجتمع واعي بأهمية الحفاظ على البيئة ويمارس العادات الصديقة للطبيعة.</p>
+      </div>
+      <div class="card">
+        <h3>💡 المبادرة</h3>
+        <p>برامج تثقيفية وعملية تعزز السلوك البيئي المسؤول والاستدامة.</p>
       </div>
     </div>
+  </section>
 
-    <!-- TEAM -->
-    <div class="section-heading reveal">
-      <h2>أعضاء فريق المبادرة</h2>
-      <div class="line"></div>
-    </div>
-
-    <div class="team-grid">
-      <!-- Right member -->
-      <div class="member-card reveal" onclick="openImgModal(this)" data-name="د/ نهى محمود أحمد">
-        <div class="avatar-wrap">
-          <img src="noha.jpg" alt="د/ نهى محمود أحمد" />
-        </div>
-        <div class="member-name">د/ نهى محمود أحمد</div>
+  <!-- ACTIVITIES SECTION -->
+  <section>
+    <h2>الأنشطة والمبادرات</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🌱 البرامج التعليمية</h3>
+        <p>ورش عمل وندوات توعوية عن الحفاظ على البيئة والطاقة النظيفة.</p>
       </div>
-
-      <!-- LEADER CENTER -->
-      <div class="member-card leader reveal" onclick="openImgModal(this)" data-name="أ.د/ إيمان أحمد هريدي">
-        <div class="shine-overlay"></div>
-        <span class="leader-star">⭐</span>
-        <div class="leader-badge">قائدة الفريق</div>
-        <div class="avatar-wrap">
-          <img src="eman.jpg" alt="أ.د/ إيمان أحمد هريدي" />
-        </div>
-        <div class="member-name">أ.د/ إيمان أحمد هريدي</div>
+      <div class="card">
+        <h3>♻️ مشاريع التدوير</h3>
+        <p>مبادرات لإعادة التدوير وتقليل النفايات في المدرسة والمجتمع.</p>
       </div>
-
-      <!-- Left member -->
-      <div class="member-card reveal" onclick="openImgModal(this)" data-name="أ. أميرة عزب">
-        <div class="avatar-wrap">
-          <img src="amira.jpg" alt="أ. أميرة عزب" />
-        </div>
-        <div class="member-name">أ. أميرة عزب</div>
+      <div class="card">
+        <h3>🌳 التشجير</h3>
+        <p>حملات تشجير وتخضير المساحات العامة بمشاركة الطلاب والمجتمع.</p>
       </div>
     </div>
+  </section>
 
-    <!-- Section Nav -->
-    <div class="section-nav">
-      <button class="snav-btn" onclick="showSection('resources')">التالي ←</button>
-      <button class="snav-btn home" onclick="showSection('home')">🏠 البداية</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ GREEN UNI ═══════════════ -->
-<section id="green-uni" class="page-section content-section">
-  <div class="container">
-    <div class="section-hero-bar">
-      <span class="section-icon">🏛️</span>
-      <h1>الجامعة الخضراء</h1>
-      <p>مسيرة جامعتنا نحو الاستدامة البيئية وتطبيق معايير الجامعات الخضراء على المستوى المحلي والدولي.</p>
-    </div>
-
-    <div class="info-grid">
-      <div class="info-card reveal">
-        <span class="card-icon">♻️</span>
-        <h3>إدارة النفايات</h3>
-        <p>تطبيق منظومة متكاملة لإعادة التدوير وتقليل النفايات داخل الحرم الجامعي من خلال محطات فرز ذكية.</p>
+  <!-- TEAM SECTION -->
+  <section>
+    <h2>الفريق</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>👩‍🎓 نهى محمود</h3>
+        <p>منسقة المشروع وقائدة الفريق - مسؤولة عن التخطيط والتنسيق.</p>
+        <img src="images/noha.jpg" alt="نهى محمود" style="width: 100%; max-width: 200px; margin-top: 15px; border-radius: 8px;">
       </div>
-      <div class="info-card reveal">
-        <span class="card-icon">⚡</span>
-        <h3>الطاقة المتجددة</h3>
-        <p>تركيب ألواح طاقة شمسية على المباني الجامعية وتخفيض استهلاك الكهرباء بنسبة 40% بحلول 2026.</p>
+      <div class="card">
+        <h3>👩‍🎓 إيمان هريدي</h3>
+        <p>مساعدة المنسقة - تنسيق الأنشطة والفعاليات.</p>
+        <img src="images/thathy.jpg" alt="إيمان هريدي" style="width: 100%; max-width: 200px; margin-top: 15px; border-radius: 8px;">
       </div>
-      <div class="info-card reveal">
-        <span class="card-icon">💧</span>
-        <h3>ترشيد المياه</h3>
-        <p>أنظمة ري ذكية وتجميع مياه الأمطار لري المساحات الخضراء وتقليل هدر المياه داخل الحرم.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">🌳</span>
-        <h3>التشجير والمساحات الخضراء</h3>
-        <p>زراعة أكثر من 500 شجرة وتحويل المساحات الخالية إلى حدائق بيئية وأماكن للتعلم في الهواء الطلق.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">📚</span>
-        <h3>المناهج الخضراء</h3>
-        <p>دمج مفاهيم الاستدامة البيئية في المقررات الدراسية عبر جميع الكليات والتخصصات الأكاديمية.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">🤝</span>
-        <h3>الشراكات البيئية</h3>
-        <p>التعاون مع المنظمات الدولية كـ UN Environment وUI GreenMetric لتقييم الأداء البيئي ورفع التصنيف.</p>
+      <div class="card">
+        <h3>👩‍🎓 أميرة محمد</h3>
+        <p>المصممة والمبدعة - تصميم المواد التسويقية والتصريحات.</p>
+        <img src="images/amira.jpg" alt="أميرة محمد" style="width: 100%; max-width: 200px; margin-top: 15px; border-radius: 8px;">
       </div>
     </div>
+  </section>
 
-    <div class="stat-grid">
-      <div class="stat-card reveal"><div class="stat-num">40%</div><div class="stat-label">تخفيض استهلاك الطاقة</div></div>
-      <div class="stat-card reveal"><div class="stat-num">500+</div><div class="stat-label">شجرة مزروعة</div></div>
-      <div class="stat-card reveal"><div class="stat-num">12</div><div class="stat-label">مشروع استدامة نشط</div></div>
-      <div class="stat-card reveal"><div class="stat-num">3</div><div class="stat-label">شراكات دولية</div></div>
-    </div>
-
-    <div class="section-nav">
-      <button class="snav-btn" onclick="showSection('green-schools')">التالي ←</button>
-      <button class="snav-btn home" onclick="showSection('home')">🏠 البداية</button>
-      <button class="snav-btn" onclick="showSection('home')">→ السابق</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ GREEN SCHOOLS ═══════════════ -->
-<section id="green-schools" class="page-section content-section">
-  <div class="container">
-    <div class="section-hero-bar">
-      <span class="section-icon">🏫</span>
-      <h1>المدارس الخضراء</h1>
-      <p>برنامج شامل لتحويل المدارس إلى بيئات تعليمية مستدامة تغرس حب الطبيعة في نفوس الطلاب منذ الصغر.</p>
-    </div>
-
-    <div class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab(this,'t1')">مراحل التطبيق</button>
-      <button class="tab-btn" onclick="switchTab(this,'t2')">الأنشطة البيئية</button>
-      <button class="tab-btn" onclick="switchTab(this,'t3')">نتائج وإنجازات</button>
-    </div>
-
-    <div id="t1" class="tab-content">
-      <div class="info-grid">
-        <div class="info-card reveal">
-          <span class="card-icon">🌱</span>
-          <h3>المرحلة الأولى: التوعية</h3>
-          <p>تنظيم ورش عمل وندوات توعوية للمعلمين والطلاب حول أهمية الحفاظ على البيئة.</p>
-        </div>
-        <div class="info-card reveal">
-          <span class="card-icon">🔧</span>
-          <h3>المرحلة الثانية: التهيئة</h3>
-          <p>تطوير البنية التحتية للمدارس وإنشاء حدائق مدرسية وركن إعادة التدوير.</p>
-        </div>
-        <div class="info-card reveal">
-          <span class="card-icon">📖</span>
-          <h3>المرحلة الثالثة: التعليم</h3>
-          <p>دمج التربية البيئية في المنهج الدراسي الرسمي وربطها بالأنشطة العملية الميدانية.</p>
-        </div>
-        <div class="info-card reveal">
-          <span class="card-icon">🏆</span>
-          <h3>المرحلة الرابعة: التقييم</h3>
-          <p>قياس الأثر وتقييم التحولات السلوكية لدى الطلاب من خلال أدوات قياس علمية.</p>
-        </div>
-      </div>
-    </div>
-    <div id="t2" class="tab-content" style="display:none">
-      <div class="whisper-list">
-        <div class="whisper-card reveal">
-          <div class="wq">🌻 مشروع الحديقة المدرسية — يزرع الطلاب نباتاتهم ويتعلمون دورة الحياة عملياً</div>
-          <div class="wa">نشاط أسبوعي — جميع المراحل</div>
-        </div>
-        <div class="whisper-card reveal">
-          <div class="wq">♻️ بطل إعادة التدوير — مسابقة لجمع أكبر كمية من المواد القابلة للتدوير</div>
-          <div class="wa">نشاط شهري — المرحلة الإعدادية</div>
-        </div>
-        <div class="whisper-card reveal">
-          <div class="wq">💧 حارس المياه — رصد استهلاك المياه بالمدرسة وابتكار حلول للترشيد</div>
-          <div class="wa">مشروع بحثي — المرحلة الثانوية</div>
-        </div>
-        <div class="whisper-card reveal">
-          <div class="wq">🌍 يوم الأرض — احتفال سنوي شامل بمشاركة أولياء الأمور والمجتمع المحلي</div>
-          <div class="wa">فعالية سنوية — الجميع</div>
-        </div>
-      </div>
-    </div>
-    <div id="t3" class="tab-content" style="display:none">
-      <div class="stat-grid">
-        <div class="stat-card reveal"><div class="stat-num">250+</div><div class="stat-label">مدرسة مشاركة</div></div>
-        <div class="stat-card reveal"><div class="stat-num">45K</div><div class="stat-label">طالب مستفيد</div></div>
-        <div class="stat-card reveal"><div class="stat-num">30%</div><div class="stat-label">تحسن الوعي البيئي</div></div>
-        <div class="stat-card reveal"><div class="stat-num">180</div><div class="stat-label">معلم معتمد</div></div>
-      </div>
-    </div>
-
-    <div class="section-nav">
-      <button class="snav-btn" onclick="showSection('whispers')">التالي ←</button>
-      <button class="snav-btn home" onclick="showSection('home')">🏠 البداية</button>
-      <button class="snav-btn" onclick="showSection('green-uni')">→ السابق</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ WHISPERS ═══════════════ -->
-<section id="whispers" class="page-section content-section">
-  <div class="container">
-    <div class="section-hero-bar">
-      <span class="section-icon">💬</span>
-      <h1>همسات تربوية</h1>
-      <p>أقوال وتأملات تربوية تربط بين قيم التعليم والمسؤولية البيئية لإلهام المربين والمتعلمين.</p>
-    </div>
-
-    <div class="whisper-list">
-      <div class="whisper-card video-card reveal" onclick="openPreview('whisper1')" style="background: linear-gradient(135deg, rgba(52,211,153,0.2), rgba(56,189,248,0.1));">
-        <div class="wq">🌱 قصة شتلة — رحلة نمو الشتلة من البذرة إلى الشجرة الجميلة</div>
-        <div class="wa">فيديو تربوي ملهم — جميع الفئات العمرية</div>
-      </div>
-      <div class="whisper-card reveal">
-        <div class="wq">"لا تورّث أطفالك المال فقط، بل أورّثهم كوكباً يستحق العيش فيه."</div>
-        <div class="wa">— همسة بيئية تربوية</div>
-      </div>
-      <div class="whisper-card reveal">
-        <div class="wq">"المعلم الذي يعلم الطفل احترام شجرة يزرع فيه احترام الحياة كلها."</div>
-        <div class="wa">— التربية البيئية</div>
-      </div>
-      <div class="whisper-card reveal">
-        <div class="wq">"الفصل الدراسي الأخضر ليس مبنى، بل هو وعي يسكن في العقول قبل الجدران."</div>
-        <div class="wa">— رؤية المبادرة</div>
-      </div>
-      <div class="whisper-card reveal">
-        <div class="wq">"كل بذرة نزرعها في حديقة المدرسة هي أمل نزرعه في قلب طفل."</div>
-        <div class="wa">— أ.د/ إيمان أحمد هريدي</div>
-      </div>
-    </div>
-
-    <div class="section-nav">
-      <button class="snav-btn" onclick="showSection('indicators')">التالي ←</button>
-      <button class="snav-btn home" onclick="showSection('home')">🏠 البداية</button>
-      <button class="snav-btn" onclick="showSection('green-schools')">→ السابق</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ INDICATORS ═══════════════ -->
-<section id="indicators" class="page-section content-section">
-  <div class="container">
-    <div class="section-hero-bar">
-      <span class="section-icon">📊</span>
-      <h1>مؤشرات بيئية</h1>
-      <p>تتبع الأداء البيئي والمؤشرات الرئيسية للقياس والتقييم المستمر لتحقيق أهداف الاستدامة.</p>
-    </div>
-
-    <div class="info-grid">
-      <div class="info-card reveal">
-        <span class="card-icon">🌡️</span>
-        <h3>انبعاثات الكربون</h3>
-        <p>تقليل انبعاثات الكربون بنسبة 35% من خلال استخدام الطاقة النظيفة والمواصلات المستدامة.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">🌾</span>
-        <h3>التنوع البيولوجي</h3>
-        <p>الحفاظ على التنوع البيولوجي وحماية الأنواع المحلية من خلال البرامج التوعوية والمحميات.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">📈</span>
-        <h3>مؤشر الوعي البيئي</h3>
-        <p>قياس مستوى الوعي البيئي لدى الطلاب والمعلمين وأولياء الأمور بشكل دوري وشامل.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">♻️</span>
-        <h3>معدل إعادة التدوير</h3>
-        <p>الوصول إلى معدل إعادة تدوير 75% من المخلفات المدرسية والجامعية.</p>
-      </div>
-    </div>
-
-    <div class="stat-grid">
-      <div class="stat-card reveal"><div class="stat-num">35%</div><div class="stat-label">تقليل انبعاثات الكربون</div></div>
-      <div class="stat-card reveal"><div class="stat-num">75%</div><div class="stat-label">معدل إعادة التدوير</div></div>
-      <div class="stat-card reveal"><div class="stat-num">92%</div><div class="stat-label">مؤشر الوعي البيئي</div></div>
-      <div class="stat-card reveal"><div class="stat-num">500</div><div class="stat-label">نوع نباتي محمي</div></div>
-    </div>
-
-    <div class="section-nav">
-      <button class="snav-btn" onclick="showSection('resources')">التالي ←</button>
-      <button class="snav-btn home" onclick="showSection('home')">🏠 البداية</button>
-      <button class="snav-btn" onclick="showSection('whispers')">→ السابق</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ RESOURCES ═══════════════ -->
-<section id="resources" class="page-section content-section">
-  <div class="container">
-    <div class="section-hero-bar">
-      <span class="section-icon">📁</span>
-      <h1>الموارد والملفات</h1>
-      <p>مكتبة شاملة تضم جميع الموارد التعليمية والملفات والوثائق اللازمة لدعم المبادرة.</p>
-    </div>
-
-    <div class="files-grid">
-      <div class="file-card reveal">
-        <div class="file-card-header">
-          <div class="file-icon ppt">📊</div>
-          <h3>خطة المبادرة الاستراتيجية</h3>
-        </div>
-        <p>خطة شاملة توضح الأهداف والمراحل والمؤشرات والجداول الزمنية لتنفيذ المبادرة.</p>
-        <div class="file-actions">
-          <button class="btn-file">📥 تحميل</button>
-          <button class="btn-file focus-btn" onclick="openPreview('presentation')">👁️ معاينة</button>
-        </div>
-      </div>
-
-      <div class="file-card reveal">
-        <div class="file-card-header">
-          <div class="file-icon doc">📄</div>
-          <h3>دليل المعلم الأخضر</h3>
-        </div>
-        <p>دليل عملي يساعد المعلمين على دمج التربية البيئية في الدروس اليومية بطرق فعالة.</p>
-        <div class="file-actions">
-          <button class="btn-file">📥 تحميل</button>
-          <button class="btn-file focus-btn" onclick="openPreview('document')">👁️ معاينة</button>
-        </div>
-      </div>
-
-      <div class="file-card reveal">
-        <div class="file-card-header">
-          <div class="file-icon vid">🎥</div>
-          <h3>سلسلة الفيديوهات التوعوية</h3>
-        </div>
-        <p>مقاطع فيديو تعليمية وتوعوية حول القضايا البيئية والحلول المستدامة.</p>
-        <div class="file-actions">
-          <button class="btn-file">📥 تحميل</button>
-          <button class="btn-file focus-btn" onclick="openPreview('video')">👁️ معاينة</button>
-        </div>
-      </div>
-
-      <div class="file-card reveal">
-        <div class="file-card-header">
-          <div class="file-icon inf">ℹ️</div>
-          <h3>نماذج ومقاييس التقييم</h3>
-        </div>
-        <p>أدوات قياس معايرة لتقييم مستوى الوعي البيئي والأداء الاستدامي بشكل علمي.</p>
-        <div class="file-actions">
-          <button class="btn-file">📥 تحميل</button>
-          <button class="btn-file focus-btn" onclick="openPreview('assessment')">👁️ معاينة</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-nav">
-      <button class="snav-btn home" onclick="showSection('home')">🏠 البداية</button>
-      <button class="snav-btn" onclick="showSection('indicators')">→ السابق</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ IMAGE MODAL ═══════════════ -->
-<div id="img-modal">
-  <div class="modal-inner">
-    <button class="close-btn" onclick="closeImgModal()">✕</button>
-    <img id="modal-img" src="" alt="Profile" />
-  </div>
+  <!-- CTA SECTION -->
+  <section style="text-align: center;">
+    <h2>انضم إلينا</h2>
+    <p style="color: var(--muted); font-size: 1.1rem; margin: 20px 0;">كن جزءاً من حركة الوعي البيئي</p>
+    <button class="btn">التواصل معنا</button>
+  </section>
 </div>
 
-<!-- ═══════════════ FOCUS MODAL ═══════════════ -->
-<div id="focus-modal">
-  <iframe id="focus-iframe" src=""></iframe>
-  <button class="focus-close" onclick="closeFocusModal()">إغلاق</button>
-</div>
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 وعي تربوي أخضر - جميع الحقوق محفوظة</p>
+  <p>مشروع تربوي لنشر الوعي البيئي والاستدامة</p>
+</footer>
 
 <script>
-// ════════════════ PAGE NAVIGATION ════════════════
-function showSection(sectionId) {
-  const sections = document.querySelectorAll('.content-section');
-  sections.forEach(sec => sec.classList.remove('active'));
-  
-  const targetSection = document.getElementById(sectionId);
-  if (targetSection) {
-    targetSection.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-}
-
-// ════════════════ IMAGE MODAL ════════════════
-function openImgModal(card) {
-  const name = card.getAttribute('data-name');
-  const img = card.querySelector('img');
-  const modal = document.getElementById('img-modal');
-  const modalImg = document.getElementById('modal-img');
-  
-  if (img) {
-    modalImg.src = img.src;
-    modalImg.alt = name;
-    modal.classList.add('open');
-  }
-}
-
-function closeImgModal() {
-  document.getElementById('img-modal').classList.remove('open');
-}
-
-// ════════════════ FOCUS MODAL ════════════════
-function openPreview(type) {
-  const modal = document.getElementById('focus-modal');
-  const iframe = document.getElementById('focus-iframe');
-  
-  const iframeSources = {
-    'presentation': 'https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000',
-    'document': 'https://docs.google.com/document/d/1dummyID/preview',
-    'video': 'https://www.youtube.com/embed/dummyID',
-    'assessment': 'https://docs.google.com/spreadsheets/d/1dummyID/preview',
-    'whisper1': 'https://www.youtube.com/embed/fow78XmHVxo'
-  };
-  
-  iframe.src = iframeSources[type] || '';
-  modal.classList.add('open');
-}
-
-function closeFocusModal() {
-  document.getElementById('focus-modal').classList.remove('open');
-  document.getElementById('focus-iframe').src = '';
-}
-
-// ════════════════ TAB SWITCHING ════════════════
-function switchTab(btn, tabId) {
-  const tabs = document.querySelectorAll('.tab-content');
-  tabs.forEach(tab => tab.style.display = 'none');
-  
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  tabButtons.forEach(b => b.classList.remove('active'));
-  
-  document.getElementById(tabId).style.display = 'block';
-  btn.classList.add('active');
-}
-
-// ════════════════ FULLSCREEN ════════════════
-function toggleFS() {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }
-}
-
-// ════════════════ INTERSECTION OBSERVER ════════════════
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ════════════════ CANVAS PARTICLES ════════════════
+// ─── CANVAS PARTICLES ANIMATION ─── //
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const particles = [];
+const particleCount = 60;
+
 class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 2 + 1;
-    this.speedX = Math.random() * 0.5 - 0.25;
-    this.speedY = Math.random() * 0.5 - 0.25;
+    this.size = Math.random() * 1.5 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = (Math.random() - 0.5) * 0.5;
     this.opacity = Math.random() * 0.5 + 0.1;
+    this.color = ['#34d399', '#38bdf8', '#f0c040'][Math.floor(Math.random() * 3)];
   }
-  
+
   update() {
     this.x += this.speedX;
     this.y += this.speedY;
-    
-    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+    if (this.x > canvas.width) this.x = 0;
+    if (this.x < 0) this.x = canvas.width;
+    if (this.y > canvas.height) this.y = 0;
+    if (this.y < 0) this.y = canvas.height;
   }
-  
+
   draw() {
-    ctx.fillStyle = `rgba(52, 211, 153, ${this.opacity})`;
+    ctx.fillStyle = this.color;
+    ctx.globalAlpha = this.opacity;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
+    ctx.globalAlpha = 1;
   }
 }
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < particleCount; i++) {
   particles.push(new Particle());
 }
 
-function animateParticles() {
+function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  particles.forEach(p => {
-    p.update();
-    p.draw();
+  particles.forEach(particle => {
+    particle.update();
+    particle.draw();
   });
-  
-  requestAnimationFrame(animateParticles);
+  requestAnimationFrame(animate);
 }
 
-animateParticles();
+animate();
 
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
 </script>
-
 </body>
 </html>
