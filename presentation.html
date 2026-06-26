@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض المبادرة - وعي تربوي أخضر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a3a3a 0%, #0d2626 100%);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #1a7a4a;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #1a7a4a;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #555;
+            font-size: 1.1em;
+        }
+        
+        .presentation-frame {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #1a7a4a;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .presentation-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            font-size: 1em;
+            border: 2px solid #1a7a4a;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        .btn-primary {
+            background: #1a7a4a;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0d5a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 122, 74, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1a7a4a;
+        }
+        
+        .btn-secondary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 122, 74, 0.2);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            color: #888;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .presentation-frame {
+                height: 400px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌿 عرض المبادرة</h1>
+            <p>مبادرة الوعي التربوي الأخضر - FPGEG</p>
+        </div>
+        
+        <div class="presentation-frame">
+            <iframe src="https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+        
+        <div class="buttons">
+            <a href="https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/edit?usp=drive_link&ouid=100786432696852703977&rtpof=true&sd=true" class="btn btn-primary" target="_blank">📊 عرض كامل</a>
+            <a href="https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/export?format=pptx" class="btn btn-secondary" target="_blank">⬇️ تحميل</a>
+        </div>
+        
+        <div class="footer">
+            <p>مبادرة وعي تربوي أخضر © 2026</p>
+        </div>
+    </div>
+</body>
+</html>
